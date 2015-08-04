@@ -1,0 +1,13 @@
+# Site settings
+title: Biodiversity Informatics and Spacial Analysis
+email: bi@kew.org
+description: > # this means to ignore newlines until "baseurl:"
+  The vast amounts of data held in Kew's collections and associated
+  databases represent a huge, often untapped resource, providing evidence
+  of changes in plant distribution and diversity over time and space.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username: RBGKew
+
+# Build settings
+markdown: kramdown
