@@ -10,4 +10,11 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 github_username: RBGKew
 
 # Build settings
+highlighter: pygments
 markdown: redcarpet
+redcarpet:
+  extensions:
+    - tables
+    - autolink
+    - no_intra_emphasis
+    - strikethrough
