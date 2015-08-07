@@ -42,7 +42,7 @@ modelling and the analysis of genomic data in order to develop the tools
 and web-based platforms for the display of plant data alongside satellite
 imagery and climatic data.
 
-Mapping and analysing plant populations and communities at greatest
+- Mapping and analysing plant populations and communities at greatest
 environmental risk and identifying those that display remarkable
 resilience and persistence to environmental perturbations – information
 that is critical to identify and understand potential opportunities and
