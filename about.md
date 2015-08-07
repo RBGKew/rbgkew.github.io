@@ -6,6 +6,7 @@ published: true
 ---
 
 
+
 The vast amounts of data held in Kew's collections and associated
 databases represent a huge, often untapped resource, providing evidence
 of changes in plant distribution and diversity over time and space.
@@ -29,8 +30,8 @@ evidence to meet policy and operational needs – both for the UK and
 international agenda.
 
 - Curating key global plant and fungal nomenclatural and taxonomic
-resources, including the [International Plant Names Index](www.ipni.org), [the World
-Checklist of Selected Plant Families](http://apps.kew.org/wcsp/prepareChecklist.do?checklist=selected_families%40%40017170120141041837), [The Plant List](www.theplantlist.org) and [Index Fungorum](indexfungorum.org).
+resources, including the [International Plant Names Index](http://www.ipni.org), [the World
+Checklist of Selected Plant Families](http://apps.kew.org/wcsp/prepareChecklist.do?checklist=selected_families%40%40017170120141041837), [The Plant List](http://www.theplantlist.org) and [Index Fungorum](http://indexfungorum.org).
 
 - Applying sophisticated spatial and analytical tools, and providing
 associated services, to greatly enhance our ability to address critical
