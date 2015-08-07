@@ -2,7 +2,10 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
+
+
 
 The vast amounts of data held in Kew's collections and associated
 databases represent a huge, often untapped resource, providing evidence
