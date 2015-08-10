@@ -31,7 +31,7 @@ international agenda.
 
 - Curating key global plant and fungal nomenclatural and taxonomic
 resources, including the [International Plant Names Index](http://www.ipni.org), [the World
-Checklist of Selected Plant Families](http://apps.kew.org/wcsp/prepareChecklist.do?checklist=selected_families%40%40017170120141041837), [The Plant List](http://www.theplantlist.org) and [Index Fungorum](http://indexfungorum.org).
+Checklist of Selected Plant Families](http://apps.kew.org/wcsp/), [The Plant List](http://www.theplantlist.org) and [Index Fungorum](http://indexfungorum.org).
 
 - Applying sophisticated spatial and analytical tools, and providing
 associated services, to greatly enhance our ability to address critical
