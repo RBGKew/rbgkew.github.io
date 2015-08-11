@@ -1,21 +1,9 @@
 ---
 layout: page
 title: About
-permalink: /about/
-published: true
+published: false
 ---
 
-
-
-The vast amounts of data held in Kew's collections and associated
-databases represent a huge, often untapped resource, providing evidence
-of changes in plant distribution and diversity over time and space.
-
-Over the next five years, the Biodiversity Informatics and Spatial
-Analysis department will use the power of newly emerging computational
-techniques to edit, curate, organise and mine these data and to evaluate
-trends and patterns through time and space (geographical, meteorological
-and ecological) to enable a new level of use of the collections.
 
 ## Key research and departmental priorities include:
 

@@ -2,22 +2,56 @@
 layout: default
 ---
 
-<div class="home">
+<p>
+The vast amounts of data held in Kew's collections and associated
+databases represent a huge, often untapped resource, providing evidence
+of changes in plant distribution and diversity over time and space.
+</p>
 
-  <h1 class="page-heading">Posts</h1>
+<p>
+Over the next five years, the Biodiversity Informatics and Spatial
+Analysis department will use the power of newly emerging computational
+techniques to edit, curate, organise and mine these data and to evaluate
+trends and patterns through time and space (geographical, meteorological
+and ecological) to enable a new level of use of the collections.
+</p>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<p>We are broadly organized across the following functional groups</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="grid-items-lines">
+  <a href="/team#plant-and-fungal-names" class="grid-item grid-item-big">
+    <h1>Plant and Fungal Names Curation</h1>
+    <p>Curating key global plant and fungal nomenclatural and taxonomic resources</p>
+  </a>
+  <a href="/team#biodiversity-informatics" class="grid-item">
+    <h1>Biodiversity Informatics</h1>
+    <p>Disseminating Kew’s plant and fungal data</p>
+  </a>
+  <a href="/team#bioinformatics" class="grid-item">
+    <h1>Genetics and Bioinformatics</h1>
+    <p>Whatever it is Joe is doing</p>
+  </a>
+  <a href="/team#spatial-analysis" class="grid-item grid-item-big">
+    <h1>Spatial Analysis</h1>
+    <p>Applying sophisticated spatial and analytical tools to greatly enhance our ability to address critical
+knowledge gaps</p>
+  </a>
+  <div class="right-cover"></div>
+  <div class="bottom-cover"></div>
 </div>
+
+<h2>Recent Posts</h2>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h3>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h3>
+    </li>
+  {% endfor %}
+</ul>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
