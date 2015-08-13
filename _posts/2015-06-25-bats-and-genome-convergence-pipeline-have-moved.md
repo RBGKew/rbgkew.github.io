@@ -2,16 +2,18 @@
 layout: post
 title: BaTS, Befi-BaTS, SHiAT and Genome Convergence Pipeline have moved!
 tags: code, git, bioinformatics, phylogenomics
+author: Joe Parker
 ---
 
-Important – please take note!
-### Headline:###
+### Important – please take note!
 
 * All my phylogenetics software is now on GitHub, not websites or Google Code
 * Please use the new FAQ pages and issue/bug tracker forms, rather than emailing me directly in the first instance
 * Until now, I’ve been hosting the open-sourced parts of my phylogenetics software on code.google.com. These include the BaTS (and Befi-BaTS) tools for phylogeny-trait association correlations; the alignment profilers SHiAT (and Genious Entropy plugin), and the Genome Convergence API for the Genome Convergence Pipeline and Phylogenomics Dataset Browser. However, Google announced that they are ending support for Google Code, and from August all projects will be read-only.
 
 I’ve therefore migrated all my projects to Github. This will eventually include FAQs, forums and issue/bug tracking for the most popular software, BaTS and Genome Convergence API.
+
+<!--more-->
 
 The projects can now be found at:
 

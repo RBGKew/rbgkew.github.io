@@ -1,0 +1,15 @@
+---
+title: Blog
+layout: default
+published: true
+---
+
+{% for post in site.posts %}
+<article class="post-content">
+  <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+  <p class="date">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}</p>
+  {{ post.excerpt }}
+  <p><a href="{{post.url | prepend: site.baseurl }}" class="read-more">Read More <span>&rsaquo;</span></a></p>
+  <hr />
+</article>
+{% endfor %}

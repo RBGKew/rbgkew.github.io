@@ -3,6 +3,7 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 0.9em;
 
   &%default-ul {
     list-style-type: circle;
@@ -29,3 +30,5 @@ dl {
     margin: 0;
   }
 }
+
+ul { @extend %default-ul }

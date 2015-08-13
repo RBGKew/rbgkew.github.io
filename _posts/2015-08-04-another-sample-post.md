@@ -10,6 +10,8 @@ Bet you're glad you stayed up..
 
 Typing
 
+<!--more-->
+
 #### H4
 
 Things
