@@ -15,3 +15,5 @@ Questions about the IPNI can be sent to IPNIeditors@kew.org and questions for Th
 # Spatial Analysis
 
 # Bioinformatics
+
+Joe Parker is an [Early Career Research Fellow in Phylogenomics)[www.kew.org/science-conservation/research-data/science-directory/people/parker-joe]
