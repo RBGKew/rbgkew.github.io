@@ -7,7 +7,7 @@ published: true
 
 # Biodiversity Informatics
 
-Carolina Tovar is an Early Career Research Fellow in Biodiversity Informatics. She builds and populates species distribution models.
+[Nicky Nicolson](http://www.kew.org/science-conservation/research-data/science-directory/people/nicolson-nicky) is a Senior Research Leader. Carolina Tovar is an Early Career Research Fellow. She builds and populates species distribution models.
 
 # Plant and Fungal Names
 
@@ -16,6 +16,8 @@ Questions about the IPNI can be sent to IPNIeditors@kew.org and questions for Th
 
 # Spatial Analysis
 
+[Justin Moat](http://www.kew.org/science-conservation/research-data/science-directory/people/moat-justin-f) is a Research Leader. He gets to tinker with drones and satellites.
+
 # Bioinformatics
 
-[Joe Parker](http://www.kew.org/science-conservation/research-data/science-directory/people/parker-joe) is an Early Career Research Fellow in Phylogenomics. He plays around with portable DNA sequencers, cloud computers, and Raspberry Pi computers.
+[Joe Parker](http://www.kew.org/science-conservation/research-data/science-directory/people/parker-joe) is an Early Career Research Fellow. He plays around with portable DNA sequencers, cloud computers, and Raspberry Pi computers.
