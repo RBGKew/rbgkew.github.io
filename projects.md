@@ -6,7 +6,7 @@ published: true
 ---
 
 
-All the cool stuff we do
+All the cool stuff we do ;)
 
 The International Plant Names Index is not just for looking up names, take a look at these recently published papers showing how the data can be used to answer a number of different questions about botany. 
 
