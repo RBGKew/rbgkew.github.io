@@ -9,7 +9,10 @@ published: true
   <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
   <p class="date">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}</p>
   {{ post.excerpt }}
-  <p><a href="{{post.url | prepend: site.baseurl }}" class="read-more">Read More <span>&rsaquo;</span></a></p>
+  <p><a href="{{post.url | prepend: site.baseurl }}" class="read-more">Read More <span>&raquo;</span></a></p>
+  {% if post.tags %}
+  {% for tag in post.tags %}<div class="badge">{{ tag }}</div>{% endfor %}
+  {% endif %}
   <hr />
 </article>
 {% endfor %}

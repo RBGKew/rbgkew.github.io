@@ -10,6 +10,23 @@ layout: default
     </header>
 
     {{ content }}
-  </article>
 
+    {% for tag in page.tags %}<div class="badge">{{ tag }}</div>{% endfor %}
+
+    {% for post in site.posts %}
+      {% if post.url ==  page.url %}
+        <div class="post-navigation">
+        {% unless forloop.first %}
+          {% assign prev = forloop.index0 | minus: 1 %}
+          <a href="{{ site.posts[prev].url }}" class="read-more previous-post">&laquo; Previous Post</a>
+        {% endunless %}
+
+        {% unless forloop.last %}
+          {% assign next = forloop.index0 | plus: 1 %}
+          <a href="{{ site.posts[next].url }}" class="read-more next-post">Next Post &raquo;</a>
+        {% endunless %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </article>
 </div>

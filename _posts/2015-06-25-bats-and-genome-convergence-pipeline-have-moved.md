@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BaTS, Befi-BaTS, SHiAT and Genome Convergence Pipeline have moved!
-tags: code, git, bioinformatics, phylogenomics
+tags: [code, git, bioinformatics, phylogenomics]
 author: Joe Parker
 ---
 
