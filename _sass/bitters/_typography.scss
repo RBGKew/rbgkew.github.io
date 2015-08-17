@@ -132,15 +132,13 @@ article.post-content {
     }
   }
 
-  code {
+  pre {
     background: #F7F7F7;
     border-radius: $base-border-radius * 1.5;
     border: 1px solid #E0E0E0;
     font-family: mono;
-    font-size: 0.75em;
     font-style: normal;
     padding: 0.1em 0.4em;
-    white-space: nowrap;
   }
 
   h3 {
