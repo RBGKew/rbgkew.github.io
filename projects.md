@@ -5,17 +5,21 @@ permalink: /projects/
 published: true
 ---
 
+<div class="vertical-tabs-container">
+  <div class="vertical-tabs">
+    {% for group in site.data.groups %}
+    <a href="javascript:void(0)" id="{{ group.id }}-tab" class="js-vertical-tab vertical-tab" rel="{{ group.id }}">{{ group.title }}</a>
+    {% endfor %}
+  </div>
 
-All the cool stuff we do ;)
-
-[IPNI](#ipni) POWOP [Real-time phylogenomics](#rtp)
-
-###IPNI<a name="ipni"></a>
-The International Plant Names Index is not just for looking up names, take a look at these recently published papers showing how the data can be used to answer a number of different questions about botany. 
-
-- [Fewer than three percent of land plant species named by women: Author gender over 260 years](http://www.ingentaconnect.com/content/iapt/tax/2015/00000064/00000002/art00003)
-- [The making of world’s largest journal in systematic botany](http://biotaxa.org/Phytotaxa/article/view/phytotaxa.191.1.1)
-- [Author inflation masks global capacity for species discovery in flowering plants](http://onlinelibrary.wiley.com/doi/10.1111/nph.12522/abstract)
-
-###Real-time phylogenomics<a name="rtp"></a>
-Modern computing and DNA sequencing technology let us analyse DNA sequences as quickly as we're able to collect living tissue.
+  <div class="vertical-tab-content-container">
+    {% for group in site.data.groups %}
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="{{ group.id }}">{{ group.title }}</a>
+    <div id="{{ group.id }}-content" class="js-vertical-tab-content vertical-tab-content">
+      {% assign include-path = group.id | prepend: 'groups/' | append: '/projects.md' %}
+      {% capture content %}{% include {{include-path}} %}{% endcapture %}
+      {{ content | markdownify }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
