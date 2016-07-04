@@ -11,11 +11,5 @@ collections:
     output: true
 
 # Build settings
-highlighter: pygments
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - tables
-    - autolink
-    - no_intra_emphasis
-    - strikethrough
+highlighter: rouge
+markdown: kramdown
