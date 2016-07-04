@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-published: true
+published: false
 ---
 
 <div class="vertical-tabs-container">
