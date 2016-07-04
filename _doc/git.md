@@ -46,3 +46,11 @@ match patterns in this file will be completely ignored by git.  This is an examp
 probably does more than you need it to:
 
 <div data-gist-id="octocat/9257657" data-gist-hide-line-numbers="true"></div>
+
+## .bashrc
+
+Setting up your terminal to display information about git when you are in a repo is
+magical. Add the following to your `.bashrc` to get a prompt that tells you what branch
+you are on and if there are un-commited changes.
+
+<div data-gist-id="jiacona/1d0902a008a69fbdb34f47e35456ca30" data-gist-hide-line-numbers="true"></div>
