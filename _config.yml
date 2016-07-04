@@ -3,9 +3,12 @@ title: Biodiversity Informatics and Spatial Analysis
 email: bi@kew.org
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://rbgkew.github.io" # the base hostname & protocol for your site
 github_username: RBGKew
 excerpt_separator: <!--more-->
+collections:
+  doc:
+    output: true
 
 # Build settings
 highlighter: pygments
