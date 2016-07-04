@@ -54,3 +54,13 @@ magical. Add the following to your `.bashrc` to get a prompt that tells you what
 you are on and if there are un-commited changes.
 
 <div data-gist-id="jiacona/1d0902a008a69fbdb34f47e35456ca30" data-gist-hide-line-numbers="true"></div>
+
+# Integrations
+
+## Read the Docs
+
+Once your repo is
+[connected](https://read-the-docs.readthedocs.io/en/latest/getting_started.html#import-your-docs)
+to Read the Docs, you can just put `.md` files in a `docs/` folder at the root of your
+repo. When you push changes to github, Read the Docs pulls them in and updates the
+documentation automagically.
