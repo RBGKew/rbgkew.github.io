@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Intro to Git</h1>
+        </section>
+
+        <section>
+          <h2>Obligitory XKCD</h2>
+          <img src="http://imgs.xkcd.com/comics/git.png" title="If that doesn't fix it, git.txt contains the phone number of a friend of mine who understands git. Just wait through a few minutes of 'It's really pretty simple, just think of branches as...' and eventually you'll learn the commands that will fix everything." />
+        </section>
+
+        <section>
+          <h2>It's really pretty simple...</h2>
+          Git is a tool for snapshotting with some really powerful tools for navigating and combining those snapshots
+        </section>
+
+        <section>
+          <h2>Installation</h2>
+          <p>Follow <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Instructions</a></p>
+        </section>
+
+        <section>
+          <h2>Initial configuration</h2>
+          Some common configuration options <a href="http://rbgkew.github.io/doc/git.html">here</a>.
+          At a bare minimum, make sure you set your name and email
+          <pre><code class="hljs sh">
+$ git config --global user.name "John Iacona"
+$ git config --global user.email j.iacona@kew.org
+          </code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h2>Github</h2>
+          </section>
+
+          <section>
+            <h3>Repo exists on Github, you want it on your computer</h3>
+            <pre><code class="hljs sh">
+$ git clone git@github.com:RBGKew/bioinfo-utils.git
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Code exists on your computer, you want it on Github</h3>
+            <pre><code class="hljs sh">
+$ git init
+$ git remote add origin git@github.com:RBGKew/shiny-new-repository.git
+$ git add .
+$ git push -u origin master
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>File lifecycle</h2>
+          <p>A file can exist in one of 4 states in git</p>
+          <ol>
+            <li>Untracked</li>
+            <li>Modified</li>
+            <li>Staged</li>
+            <li>Committed</li>
+          </ol>
+        </section>
+
+        <section><code>git status</code> is your friend</section>
+
+        <section>
+          <h2>Untracked</h2>
+          Create a new file for your bio and add it to git
+          <pre><code>
+$ vim docs/people/john-iacona.md
+$ git add docs/people/john-iacona.md
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Modified</h2>
+          Add your bio and see what has changed
+          <pre><code>
+$ vim docs/people/john-iacona.md
+$ git diff
+          </pre></code>
+        </section>
+
+        <section>
+          <h2>Staged</h2>
+          Once you are happy with your changes, add them to the staging area
+          <pre><code>
+$ git add docs/people/john-iacona.md
+          </code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h2>Committed</h2>
+            Finally, make an official snapshot of all <em>staged</em> changes
+            <pre><code>
+$ git commit -m "Super useful commit message"
+          </pre></code>
+          </section>
+
+          <section>
+            <h2>Aside about commit messages</h2>
+            <p>other obligatory xkcd...</p>
+            <img src="http://imgs.xkcd.com/comics/git_commit.png" title="Merge branch 'asdfasjkfdlas/alkdjf' into sdkjfls-final"/>
+            <p>Commit messages should document what you have done for others and your future-self</p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Think about what you've done</h2>
+          <pre><code>
+$ git log
+        </pre></code>
+        If you are using my <a href="https://gist.github.com/jiacona/2659ad2e290bda2fc6869f67b2d32b98">.gitconfig</a> file, the following aliases can be useful.
+        <pre><code>
+$ git lol
+$ git lola
+      </pre></code>
+        </section>
+
+        <section><h2>Push it (real good)</h2></section>
+        <section>
+          <h2>Remote</h2>
+          Another copy of a repo. <code>origin</code> is the most common
+
+          <pre><code>
+$ git push -u origin HEAD
+          </pre></code>
+        </section>
+
+        <section>
+          <section>
+            <h2>So fetch</h2>
+            If the remote repo has progressed beyond yours, you have to <code>fetch</code> changes and merge them with yours
+              <pre><code>
+$ git fetch
+$ git merge origin/master
+            </pre></code>
+          </section>
+
+          <section>
+            <h2><code>fetch</code> vs. <code>pull</code></h2>
+            <p><code>pull</code> tries to fetch and merge in one step.</p>
+            <pre><code>
+$ git pull
+            </pre></code>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          http://rbgkew.github.io/doc/git.html
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+      
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

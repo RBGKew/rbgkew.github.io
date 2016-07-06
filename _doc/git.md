@@ -64,3 +64,7 @@ Once your repo is
 to Read the Docs, you can just put `.md` files in a `docs/` folder at the root of your
 repo. When you push changes to github, Read the Docs pulls them in and updates the
 documentation automagically.
+
+# Presentation
+
+Intro to git [presentation](/presentations/git.html)
