@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Docker</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <img src="https://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png"/ alt="Docker whale">
+          <h1>An introduction</h1>
+        </section>
+
+        <section>
+          <img src="https://imgs.xkcd.com/comics/xkcd_stack.png" alt="Obligatory XKCD"/>
+        </section>
+
+        <section>
+          <h1>Why should you care?</h1>
+          Docker is a way of packaging code and everything that is needed to run it
+        </section>
+
+        <section>
+          <h1>It's kind of like Git (Remember that?)</h1>
+           but for a whole operating system and everything running in it
+        </section>
+
+        <section>
+          <h1>This means.. </h1>
+          <ul>
+            <li>Common software can be super easy to install and run</li>
+            <li>If software works on your machine, it works in the same way on everyone else's</li>
+            <li>It can act as installation and execution documentation for your future self (or others)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Installation</h1>
+          <p>Follow <a href="https://docs.docker.com/engine/installation/">Instructions</a></p>
+        </section>
+
+        <section>
+          <h1>Some terminology</h1>
+          <dl>
+            <dt>Image</dt>
+            <dd>A blueprint for running your code</dd>
+            <dt>Container</dt>
+            <dd>An instance of an image. You can run many containers based on one image</dd>
+            <dt>Volume</dt>
+            <dd>A place to put data that containers can access</dd>
+          </dl>
+        </section>
+
+        <section>
+          <h1>Images</h1>
+          <p>Blueprint for your code and execution environment. They are a snapshot of an operating system, along with any code, data and configuration you specify.</p>
+        </section>
+
+        <section>
+          <h2>Running Images</h2>
+          <p>Images are usually specified as <b>[name]:[version]</b></p>
+          <pre><code class="bash hljs">
+$ docker run ubuntu:16.04
+          </code></pre>
+          <p>If an image you specify isn't found on your computer, Docker looks for it in a <a href="https://hub.docker.com/explore">registry</a> and tries to downloads it from there</p>
+        </section>
+
+        <section>
+          <h2>Managing Images</h2>
+          <p>You can see all the images you have on your system</p>
+          <pre><code class="bash hljs">
+$ docker images
+          </code></pre>
+          <p>and delete them if you don't need them any more</p>
+          <pre><code class="bash hljs">
+$ docker rmi ubuntu:16.04
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Containers</h1>
+          <p>When you <code>run</code> an image, you get a container.</p>
+          <pre><code class="bash hljs">
+$ docker run --name ubuntu-test --rm -it ubuntu:16.04 bash
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Managing Containers</h2>
+          <p>You can see all the containers you have running on your system</p>
+          <pre><code class="bash hljs">
+$ docker ps
+          </code></pre>
+          <p>and delete them if you don't need them any more</p>
+          <pre><code class="bash hljs">
+$ docker rm ubuntu-test
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Volumes</h1>
+          <p>Act like mounts or shared drives</p>
+          <p>As a matter of principle, don't expect data to persist in a container unless it is in a volume</p>
+        </section>
+
+        <section>
+          <h2>There are two types of volumes you should care about</h2>
+          <ol>
+            <li>Docker managed data&nbsp;volumes</li>
+            <li>Host directory mounts</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Docker managed data volumes</h2>
+          <p>Start an ubuntu container with a volume called <code>test_volume</code> mounted at <code>/tmp</code></p>
+          <pre><code class="bash hljs">
+$ docker run --name ubuntu-test --rm -it -v ubuntu-volume:/tmp ubuntu:16.04 bash
+          </code></pre>
+          <p>Display all volumes</p>
+          <pre><code class="bash hljs">
+$ docker volume ls
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Getting data in and out of containers</h2>
+          <p>Data in a volume is only available to containers that mount it</p>
+          <p>Get data in and out of a running container with <code>docker cp</code></p>
+          <pre><code class="bash hljs">
+$ docker cp ubuntu-test:/tmp/blarg .
+          </code></pre>
+
+        </section>
+
+        <section>
+          <h2>Host directory mount</h2>
+          <p>Start an ubuntu container with host directory <code>/tmp</code> mounted in the container at <code>/tmp</code></p>
+          <pre><code class="bash hljs">
+$ docker run --rm -it -v /tmp:/tmp ubuntu:16.04 bash
+          </code></pre>
+          <p>Can be convenient but has some issues we'll come back to</p>
+        </section>
+
+        <section>
+          <h1>Fish Blast</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
