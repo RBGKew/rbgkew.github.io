@@ -19,3 +19,7 @@ Technical documentation for developers and content editors
 # [Git](/doc/git.html)
 
 Using Git and Github at Kew
+
+# [Docker](/doc/docker.html)
+
+Using docker for science
