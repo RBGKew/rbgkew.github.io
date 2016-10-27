@@ -163,7 +163,136 @@ $ docker run --rm -it -v /tmp:/tmp ubuntu:16.04 bash
 
         <section>
           <h1>Fish Blast</h1>
-        </section>
+          <p>A "practical" example </p>
+      </section>
+      <section>
+        <h2> We wanted to know what kind of fish this presentation was most like.</h2>
+        <p> We extracted all the A T G and Cs using this terrifying bash script:
+          <pre><code class="bash hljs">echo ">X" > /tmp/dna && egrep [atcg] -oIRh | tr -d '\n' >> /tmp/dna</code></pre>
+        (Don't try and memorise this)</p>
+      </section>
+      <section>
+        <p> We found a docker image online with blast installed </p>
+            <pre><code class="bash hljs">docker pull simonalpha/ncbi-blast-docker</code></pre>
+        <p> And a set of mitocondrial fish fasta files </p>
+            <pre><code class="bash hljs">wget "http://mitofish.aori.u-tokyo.ac.jp/files/complete_partial_mitogenomes.zip"</code></pre>
+      </section>
+      <section>
+        <p> We built the database
+          <pre><code class="bash hljs">docker run --rm -v ~/blast/project:/blast -v ~/blast/databases:/db /
+-w /blast simonalpha/ncbi-blast-docker /
+makeblastdb -in /blast/fish.fa -parse_seqids -dbtype nucl</code></pre>
+Then ran our fasta file against it
+          <pre><code class="bash hljs">docker run --rm -v ~/blast/project:/blast -v ~/blast/databases:/db /
+-w /blast simonalpha/ncbi-blast-docker blastn -query /blast/test.faa /
+-db /db/fish.fa -task blastn  -out q_seq_V_pres_db</code></pre>
+      </section>
+      <section>
+        <h2> But.. </h2>
+        <p> This is no better than just downloading blast.</p>
+        <p> </p>
+        <p>And there are far too many options.</p>
+        <p> </p>
+        <p> And making the database each time is a pain.</p>
+      </section>
+      <section>
+        <h2> Solution:</h2>
+        <p> We can make our own docker image! </p>
+      </section>
+      <section>
+        <p>A Docker image is built from a Dockerfile
+        </p>
+        <p> which contains, at a minimum, a parent image and a command that the container runs</p>
+      </section>
+        <section>
+        <p> As we're pretty happy with the image from the previous command, we're going to use that as our parent
+          <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus</code></pre>
+        </p>
+      </section>
+      <section>
+        <p> We want to create some directories, as we'll use them later
+        <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus
+
+RUN mkdir /db</code></pre>
+    </p>
+    </section>
+      <section>
+        <p> Next, we want to add the contents of the database folder to our image </p>
+        <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus
+
+RUN mkdir /db
+
+ADD database /db
+</code></pre>
+      </section>
+      <section>
+        <p> There's no getting round the fact that blast has a load of setup options, so we've hidden them in a bash script which we need to add</p>
+
+        <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus
+
+RUN mkdir /db
+
+ADD database /db
+
+ADD blast.sh /blast/
+
+RUN chmod +x /blast/blast.sh</code></pre>
+      </section>
+      <section>
+      <p>We need some volumes for the input and output files to go into </p>
+      <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus
+
+RUN mkdir /db
+
+ADD database /db
+
+ADD blast.sh /blast/
+
+RUN chmod +x /blast/blast.sh
+
+VOLUME /input
+
+VOLUME /output</code></pre>
+      </section>
+      <section>
+        <p> Finally, we need the image to run that script when it starts </p>
+        <pre><code class="bash hljs">FROM simonalpha/ncbi-blast-docker:2.2.30plus
+
+RUN mkdir /db
+
+ADD database /db
+
+ADD blast.sh /blast/
+
+RUN chmod +x /blast/blast.sh
+
+VOLUME /input
+
+VOLUME /output
+
+ENTRYPOINT ["/blast/blast.sh"]</code></pre>
+      </section>
+      <section>
+        <h2> We have a Dockerfile! </h2>
+      </section>
+      <section>
+        <h2> Now what? </h2>
+        <p> We need to create an image (called blast-fish)
+          <pre><code class="bash hljs">docker build -t blast-fish .</code></pre>
+        </p>
+      </section>
+      <section>
+        <p> And run it!
+          <pre><code class="bash hljs">docker run --rm -v *input_directory or file*:/input -v *output_directory*:/output blast-fish</code></pre>
+      </section>
+      <section>
+        <h2> The result:</h2>
+          <p> This presentation most closely matches a suckermouth armored catfish</p>
+          <img src=https://c2.staticflickr.com/6/5550/11516850826_053f0d4779_b.jpg />
+      </section>
+      <section>
+        The end.
+      </section>
       </div>
     </div>
 
