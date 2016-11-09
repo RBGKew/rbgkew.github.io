@@ -16,7 +16,7 @@ Common usage scripts and documentation for bioinformatics analyses and workflows
 
 Technical documentation for developers and content editors
 
-# [Reconciliation Service](/doc/reconciliation/index.html)
+# [Reconciliation Service](/doc/reconciliation_index.html)
 
 Documentation for the reconciliation (plant name matching) service
 
