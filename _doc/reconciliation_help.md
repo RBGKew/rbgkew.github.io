@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Reconciliation Service
+title: Reconciliation Help
 ---
 
 # Using the Reconciliation Service
