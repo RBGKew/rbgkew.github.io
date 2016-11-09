@@ -20,42 +20,39 @@ The services are easiest to use if the whole name (or value to be reconciled) is
 
 Optionally, use facets to limit which names you wish to match — for example, to select particular ranks to match. If you have a lot of names (over 1000) you could star 10 or so names and facet on them, for a trial run.
 
-<spring:url var="about" value="/about">Find the configuration you want to use from the [list here](${about}). Note the two _endpoints_: the OpenRefine reconciliation service, and the <abbr title="JavaScript Object Notation">JSON</abbr> web service. These instructions will assume you have a list of plant names and wish to reconcile them against the <spring:url var="aboutIpniNameUrl" value="/about/IpniName">[IPNI Name reconciliation service](${aboutIpniNameUrl}).</spring:url></spring:url>
+Find the configuration you want to use from the [list here](http://data1.kew.org/reconciliation/about). Note the two _endpoints_: the OpenRefine reconciliation service, and the JSON web service. These instructions will assume you have a list of plant names and wish to reconcile them against the [IPNI Name reconciliation service](http://data1.kew.org/reconciliation/about/IpniName).
 
 ## [Querying the Reconciliation Service](#reconciling)
 
-<spring:url var="reconcileIpniNameUrl" value="/reconcile/IpniName">
 
 1.  If you have whole entities (e.g. full scientific names) in a single column, choose that column
 2.  Otherwise, choose a column unique to each record, like an identifier.
-3.  <spring:url var="img" value="/img/reconcile-start-reconciling.png">![](${img}) Click the column menu, and choose _Reconcile_ → _Start reconciling…_.</spring:url>
-4.  If this is the first time you’ve reconciled against a particular service, you may need to click _Add Standard Service_. (Some services are already included.) Enter the URL from the Reconciliation Service website, for example `[http://${serverAndPort}${reconcileIpniNameUrl}](${reconcileIpniNameUrl})`, and click OK.
+3.   Click the column menu, and choose _Reconcile_ → _Start reconciling…_
+4.  If this is the first time you’ve reconciled against a particular service, you may need to click _Add Standard Service_. (Some services are already included.) Enter the URL from the Reconciliation Service website, for example `[http://data1.kew.org/reconciliation/reconcile/IpniName](http://data1.kew.org/reconciliation/reconcile/IpniName)`, and click OK.
 5.  Select the service from the list on the left. After a moment, the dialog is filled in with options.
 6.  If you have columns for genus, species etc fill in the text boxes for _Also use relevant details from other columns_. The values to fill in come from those listed on the website describing the service (in this case, `epithet_1`, `epithet_2` etc, [listed here](${aboutIpniNameUrl}#properties)).  
-    <spring:url var="img" value="/img/reconciling-select-properties.png">![](${img})</spring:url>
+    ![](http://data1.kew.org/reconciliation/img/reconciling-select-properties.png)
 7.  Click _Start Reconciling_
-8.  <spring:url var="img" value="/img/reconciling-results.png">![](${img})
+8.  ![](http://data1.kew.org/reconciliation/img/reconciling-results.png)
 
     Results appear after a while. Where there’s a single possibility it will have been automatically selected. Otherwise, you can select the match using the tick boxes.
 
     It’s likely you will receive multiple results where IPNI has duplicate names. We hope to hide the duplicates from IPNI in the near future.
 
-    </spring:url>
+   
 9.  If matching hasn’t worked you can also click _Search for match_ and adjust the query.  
-    <spring:url var="img" value="/img/reconciling-suggest-entity.png">![](${img})</spring:url>
-10.  <spring:url var="img" value="/img/add-column-based-on-this-column.png">![](${img})
+    ![](http://data1.kew.org/reconciliation/img/reconciling-suggest-entity.png)
+10.  
 
     To get the identifiers: click the column’s menu and choose _Add column based on this column…_.
 
     Then use the expression `cell.recon.match.id`.
 
-    <spring:url var="img" value="/img/add-column-cell-recon-match-id.png">![](${img})
 
     To get the name use `cell.recon.match.name` instead.
 
     These are GREL expressions — see the [GREL Functions Documentation](https://github.com/OpenRefine/OpenRefine/wiki/GREL-Functions) for more information.
 
-    </spring:url></spring:url>
 
 ## [Extending data using the Metaweb Query Language service](#extending)
 
@@ -63,7 +60,7 @@ Data that has been (partially!) reconciled against IPNI and presented through a 
 
 1.  Click a reconciled column heading and choose _Edit column_ → _Add column using MQL_.
 2.  Select a service from the list on the left, or add a new one.
-3.  This shows a list of available properties — choose one or more properties from this list and click OK. <spring:url var="img" value="/img/mql-tpl-example.png">![](${img})</spring:url>
+3.  This shows a list of available properties — choose one or more properties from this list and click OK. ![](http://data1.kew.org/reconciliation/img/mql-tpl-example.png)
 4.  The data values are retrieved and added as extra columns. If they are entities themselves (for example, more plant names) then it’s possible to run further MQL queries from those columns.
 
 ## [Using the results](#exporting)
