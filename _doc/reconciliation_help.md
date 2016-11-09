@@ -1,3 +1,8 @@
+---
+layout: page
+title: Reconciliation Service
+---
+
 # Using the Reconciliation Service
 
 The recommended way to use the Reconciliation Service is with _OpenRefine_. This tool, previously called _Google Refine_, can query a _Web Service_ — a website that returns information in a form the computer can interpret — and record the results, whether that’s an exact match, a close match, a list of possible matches, or no match at all.
