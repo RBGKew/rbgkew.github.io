@@ -16,6 +16,10 @@ Common usage scripts and documentation for bioinformatics analyses and workflows
 
 Technical documentation for developers and content editors
 
+# [Reconciliation Service](/doc/reconciliation/index.html)
+
+Documentation for the reconciliation (plant name matching) service
+
 # [Git](/doc/git.html)
 
 Using Git and Github at Kew
