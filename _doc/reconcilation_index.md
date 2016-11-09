@@ -12,7 +12,7 @@ To ensure good-quality matches a sequence of transformations is configured, spec
 
 ## Tools
 
-Tools exist to make using the reconciliation service straightforward. The most user-friendly is _OpenRefine_ (previously called _Google Refine_), which provides a spreadsheet interface to reconcile data and extend it using Kew’s resources. See the [help page](${helpUrl}) for instructions. Alternatively, <abbr title="comma-separated value">CSV</abbr> files can be uploaded to this website, and will be returned with identifiers added. Or, a single query can be made.
+Tools exist to make using the reconciliation service straightforward. The most user-friendly is _OpenRefine_ (previously called _Google Refine_), which provides a spreadsheet interface to reconcile data and extend it using Kew’s resources. See the [help page](${helpUrl}) for instructions. Alternatively, CSV files can be uploaded to this website, and will be returned with identifiers added. Or, a single query can be made.
 
 ## Feedback
 
